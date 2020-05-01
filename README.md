@@ -23,7 +23,7 @@ The Docker Image can be pulled by
 docker pull mjansche/tts-tutorial-sltu2016
 ```
 After pulling the docker image, we need to setup **flite** which is an open source small fast run-time text to speech engine.
-To setup `**flite**`, run the docker image and once in the directory `**/usr/local/src**` run the following commands
+To setup `flite`, run the docker image and once in the directory `/usr/local/src` run the following commands
 
 ```sh
 git clone https://github.com/festvox/flite.git
@@ -33,7 +33,7 @@ make
 ```
 
 ### Audio Files
-The training requires PCM encoded 16bit mono wav audio files with a sampling rate of 16kHz. Please use `**ffmpeg**` to convert the recorded audio files to the correct format by running the following
+The training requires PCM encoded 16bit mono wav audio files with a sampling rate of 16kHz. Please use `ffmpeg` to convert the recorded audio files to the correct format by running the following
 ```sh
 ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 ```
