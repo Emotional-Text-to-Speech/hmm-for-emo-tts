@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HMM</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					HMM Voice Generator
+				</span>
+
+				<!-- <div class="wrap-input100 validate-input bg1" data-validate="Please Type an Emotion">
+					<span class="label-input100">EMOTION *</span>
+					<input class="input100" type="text" name="name" placeholder="Enter an Emotion">
+				</div> -->
+
+				<!-- <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="label-input100">Email *</span>
+					<input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+				</div>
+
+				<div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="label-input100">Phone</span>
+					<input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+				</div> -->
+
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Emotions *</span>
+					<div>
+						<select class="js-select2" name="service" id="emotion">
+							<option>Please choose</option>
+							<option>Amused</option>
+							<option>Anger</option>
+							<option>Disgust</option>
+							<option>Neutral</option>
+							<option>Sleepiness</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+
+				<div class="w-full dis-none js-show-service">
+					<div class="wrap-contact100-form-range">
+						<span class="label-input100">Duration Stretch (Default: 1) *</span>
+
+						<div class="contact100-form-range-value">
+							<span id="value-lower">0</span>
+							<input type="text" name="from-value">
+							<input type="text" name="to-value">
+						</div>
+
+						<div class="contact100-form-range-bar">
+							<div id="stretch"></div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="label-input100">Message</span>
+					<textarea class="input100" name="message" placeholder="Your message here..." id="message"></textarea>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" onclick="get_voice()" type="button" id="button">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+
+				<div style="margin: 0 auto;">
+					<div id="audio"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Please choose") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('stretch');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 1 ],
+	        connect: true,
+	        range: {
+	            'min': 0,
+	            'max': 2,
+	        },
+	        step: 0.1
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = values[handle];
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	    });
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+</body>
+
+<script type="text/javascript">
+	function get_voice(){
+		var emotion = $('#emotion :selected').text().toLowerCase().trim();
+		var stretch = $('#value-lower').html();
+		var text = $('#message').val().toLowerCase().trim();
+		if (emotion == "Please choose") {
+			alert("Please select an emotion");
+			window.location.reload();
+		}
+		
+		
+	
+		$.ajax({
+	    	type: "POST",
+		    url: "/getvoice",
+		    contentType: "application/json; charset=utf-8",
+		    data: JSON.stringify({ emotion: emotion, stretch:stretch, text:text }),
+		})
+		.done(function(){
+			document.getElementById('audio').innerHTML = '<audio controls autoplay style="display: block; margin=20px;" id="audio-player" controls="controls" src="test.wav" type="audio/mpeg">';
+		});
+
+		//document.getElementById('audio').innerHTML = '<audio controls autoplay id="audio-player" controls="controls" src="test.wav" type="audio/mpeg">';
+	}
+
+</script>
+
+</html>
