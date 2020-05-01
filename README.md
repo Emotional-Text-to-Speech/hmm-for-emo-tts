@@ -152,8 +152,8 @@ node server.js
 The above command will run the server on localhost at port 5050.
 
 # References
-[Festvox](http://festvox.org) : Festvox project developed by Carnegie Mellon University.
-[Docker](https://hub.docker.com/r/mjansche/tts-tutorial-sltu2016/) : Festvox configured docker image.
-[Building Data](http://www.cs.columbia.edu/~ecooper/tts/utt_eng.html) : The format for utterance file.
-[Training](http://festvox.org/bsv/x3528.html) : Steps to train the HMM Model.
+[Festvox](http://festvox.org) : Festvox project developed by Carnegie Mellon University.\
+[Docker](https://hub.docker.com/r/mjansche/tts-tutorial-sltu2016/) : Festvox configured docker image.\
+[Building Data](http://www.cs.columbia.edu/~ecooper/tts/utt_eng.html) : The format for utterance file.\
+[Training](http://festvox.org/bsv/x3528.html) : Steps to train the HMM Model.\
 [Automated Script](http://festvox.org/cmu_indic/unpacked_all/cmu_indic_slp_mr/bin/build_cg_voice) : Description of the automated script.
