@@ -7,6 +7,7 @@ A repository with comprehensive instructions for using the Festvox toolkit for g
 ---
 # Contents
 - [Dataset](#dataset)
+- [Approach](#approach)
 - [Training your own HMM models](#training-your-own-hmm-models)
   - [Requirements](#requirements)
   - [Setup](#setup)
@@ -29,7 +30,36 @@ A repository with comprehensive instructions for using the Festvox toolkit for g
 | Dataset | No. of Speakers | Emotions | No. of utterances | No. of unique prompts | Duration | Language | Comments | Pros | Cons|
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | **[TESS](https://tspace.library.utoronto.ca/handle/1807/24487)** | 2 (2 female) | 7 (anger, disgust, fear, happiness, pleasant surprise, sadness, and neutral) | 2800 | 200 | ~2 hours | English | <ul><li>Consists of sentences of the form "Say the word ___"  where the blank is filled by a unique word</li><li> Each speaker has 200 new words spoken after the base sentence, for the 7 different emotions</li></ul> | <ul><li>Easily available</li><li>Emotions contained are very easy to interpret</li></ul> | <ul><li>Very limited utterances</li><li>Same base utterance leading to redundancy</li></ul> |
-| **[EMOV-DB](https://github.com/numediart/EmoV-DB)** | 5 (3 male, 2 female) | 5 (neutral, amused, angry sleepy, disgust) |  6914 (1568, 1315, 1293, 1720, 1018) | 1150 | ~7 hours | English, French (1 male speaker) |<ul><li> The *Amused* emotion contains non-verbal cues like chuckling, etc. which do not show up in the transcript</li><li> Similarly, *Sleepiness* has yawning sounds.</li></ul> | <ul><li>Only large scale emotional corpus that we found freely available</li></ul> | <ul><li>Emotions covered are not very easy to interpret</li><li>The non-verbal cues make synthsis difficult</li><li> Also, not all emotions are available for all speakers</li></ul> |
+| **[EmoV-DB](https://github.com/numediart/EmoV-DB)** | 5 (3 male, 2 female) | 5 (neutral, amused, angry sleepy, disgust) |  6914 (1568, 1315, 1293, 1720, 1018) | 1150 | ~7 hours | English, French (1 male speaker) |<ul><li> The *Amused* emotion contains non-verbal cues like chuckling, etc. which do not show up in the transcript</li><li> Similarly, *Sleepiness* has yawning sounds.</li></ul> | <ul><li>Only large scale emotional corpus that we found freely available</li></ul> | <ul><li>Emotions covered are not very easy to interpret</li><li>The non-verbal cues make synthsis difficult</li><li> Also, not all emotions are available for all speakers</li></ul> |
+
+
+# Approach
+
+## :x: Approach 1: Using HTS toolkit for building emotional speech
+
+The [HTS Toolkit](http://hts.sp.nitech.ac.jp/) is a go-to first step for HMM-based speech synthesis methods. We came across a lot of work which made use of HMM techniques to generate speech, which then referred to HTS for their implementation ([this paper](https://sci-hub.tw/10.1109/JPROC.2013.2251852), [this detailed lecture](https://www.cs.cmu.edu/~pmuthuku/mlsp_page/lectures/spss_specom.pdf) and [this beginner's guide](http://www.cstr.ed.ac.uk/downloads/publications/2010/king_hmm_tutorial.pdf) were extremely helpful)
+
+### Observations 
+- Even with the help of the HTS documentation, using and setting up HTS is not a cake-walk (which led us to build this README for a more structured approach) and due to the vast amount of parameteres to set, it gets extremely overwhelming for a beginner.
+- When attempting to write the models from scratch, most of the techniques described in the papers above are incremental buildups of several other works, which was hard to trace and thus, implement
+
+## :x: Approach 2: Using Festvox on the TESS Dataset
+
+The next step was to try the [Festvox Toolkit](http://www.festvox.org/cmu_arctic/). We tried it on the TESS Dataset as detailed above.
+
+### Observation
+
+- Even though we were able to setup the HMM Toolkit, the TESS Dataset has repeated base utterances - "Say the word", followed by a unique word
+- After the "Say the word", the model would find it difficult to utter the next word.
+- Models are able to capture (different) emotion and expressive levels to some degree, but seem to be falling short on the vocabulary, so the next step would be to train it on a larger emotional corpus with a richer vocabulary like EmoV-DB
+
+## :white_check_mark: Approach 3: Using Festvox on the EmoV-DB
+
+The steps followed are documented in the following flowchart - 
+
+![Flowchart](assets/hmm_flowchart.png)
+
+The EmoV-DB dataset was formatted in the format given in [this section](#file-with-utterances). Further details about training from scratch is given [here](#training-your-own-hmm-models).
 
 
 # Training your own HMM models
