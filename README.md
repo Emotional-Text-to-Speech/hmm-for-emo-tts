@@ -8,6 +8,9 @@ A repository with comprehensive instructions for using the Festvox toolkit for g
 # Contents
 - [Dataset](#dataset)
 - [Approach](#approach)
+  - [Approach 1: Using HTS toolkit for building emotional speech](#x-approach-1-using-hts-toolkit-for-building-emotional-speech)
+  - [Approach 2: Using Festvox on the TESS Dataset](#x-approach-2-using-festvox-on-the-tess-dataset)
+  - [Approach 3: Using Festvox on the EmoV-DB](#white_check_mark-approach-3-using-festvox-on-the-emov-db)
 - [Training your own HMM models](#training-your-own-hmm-models)
   - [Requirements](#requirements)
   - [Setup](#setup)
