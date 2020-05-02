@@ -151,7 +151,7 @@ Then audio can be easily generated for any utterance by
 
 # Demonstration
 
-We also make our system demonstration publicaly available within the ```hmm_wrapper``` directory. Further details are provided in the [README](https://github.com/Emotional-Text-to-Speech/hmm-for-emo-tts/hmm_wrapper/README.md) of the directory.
+We also make our system demonstration publicaly available within the ```hmm_wrapper``` directory. Further details are provided in the [README](https://github.com/Emotional-Text-to-Speech/hmm-for-emo-tts/blob/master/hmm_wrapper/README.md) of the directory.
 
 # Trained Models
 
