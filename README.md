@@ -172,11 +172,11 @@ These models can be used for further fine-tuning or running the system provided 
 
 For any errors or help in running the project, please open an issue or write to any of the project members - 
 
-- Pranav Jain (pranav16255 <at> iiitd <dot> ac <dot> in)
-- Srija Anand (srija17199 <at> iiitd <dot> ac <dot> in)
-- Eshita (eshita17149 <at> iiitd <dot> ac <dot> in)
-- Shruti Singh (shruti17211 <at> iiitd <dot> ac <dot> in)
-- Pulkit Madaan (pulkit16257 <at> iiitd <dot> ac <dot> in)
-- Aditya Chetan (aditya16217 <at> iiitd <dot> ac <dot> in)
-- Brihi Joshi (brihi16142 <at> iiitd <dot> ac <dot> in)
+- Pranav Jain (pranav16255 [at] iiitd [dot] ac [dot] in)
+- Srija Anand (srija17199 [at] iiitd [dot] ac [dot] in)
+- Eshita (eshita17149 [at] iiitd [dot] ac [dot] in)
+- Shruti Singh (shruti17211 [at] iiitd [dot] ac [dot] in)
+- Pulkit Madaan (pulkit16257 [at] iiitd [dot] ac [dot] in)
+- Aditya Chetan (aditya16217 [at] iiitd [dot] ac [dot] in)
+- Brihi Joshi (brihi16142 [at] iiitd [dot] ac [dot] in)
 
