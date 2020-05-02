@@ -2,6 +2,8 @@
 
 A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text
 
+![demo](assets/hmm_app_demo.gif)
+
 
 # Training Hidden Markov Model
 Festvox project is part of the work at [Carnegie Mellon University's speech group](http://www.speech.cs.cmu.edu) aimed at advancing the state of Speech Synthesis.
