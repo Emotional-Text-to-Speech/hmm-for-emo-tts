@@ -1,6 +1,6 @@
 # HMM-based Emotional Text-to-speech
 
-<h4 align="center">A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text!</h4>
+A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text. This was done as a part of a course project for Speech Recognition and Understanding (ECE557/CSE5SRU) at IIIT Delhi during Winter 2020.
 
 ![demo](assets/hmm_app_demo_hd.gif)
 
@@ -151,7 +151,13 @@ Then audio can be easily generated for any utterance by
 
 # Demonstration
 
+We also make our system demonstration publicaly available within the ```hmm_wrapper``` directory. Further details are provided in the [README](https://github.com/Emotional-Text-to-Speech/hmm-for-emo-tts/hmm_wrapper/README.md) of the directory.
+
 # Trained Models
+
+We also make the trained models for the different emotions available [here](https://drive.google.com/drive/folders/1Cgwis8BtXZuLXHD91XwfMLCF2GIB2A0J?usp=sharing). 
+
+These models can be used for further fine-tuning or running the system provided in ```hmm_wrapper``` directory.
 
 # References
 [Festvox](http://festvox.org) : Festvox project developed by Carnegie Mellon University.\
