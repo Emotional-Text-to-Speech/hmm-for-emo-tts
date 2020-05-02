@@ -1,11 +1,19 @@
 # HMM-based Emotional Text-to-speech
 
-A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text
+<h4 align="center">A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text!</h4>
 
-![demo](assets/hmm_app_demo.gif)
+![demo](assets/hmm_app_demo_hd.gif)
+
+---
+
+<p align="left">
+  • <a href="#training">Training</a> <br>
+  • <a href="#demo">Demonstration</a> <br>
+  • <a href="#references">References</a> <br>
+</p>
 
 
-# Training Hidden Markov Model
+# Training
 Festvox project is part of the work at [Carnegie Mellon University's speech group](http://www.speech.cs.cmu.edu) aimed at advancing the state of Speech Synthesis.
 
 We will be using Festvox to train our HMM models and build voices.
