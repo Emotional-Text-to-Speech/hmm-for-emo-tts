@@ -5,15 +5,37 @@
 ![demo](assets/hmm_app_demo_hd.gif)
 
 ---
+# Contents
+
+- [Training your own HMM models](#training-your-own-hmm-models)
+  - [Requirements](#requirements)
+  - [Setup](#setup)
+    - [Docker Image](#docker-image)
+    - [Audio Files](#audio-files)
+    - [File with Utterances](#file-with-utterances)
+  - [Training](#training)
+    - [Preparing the Directory](#preparing-the-directory)
+    - [Synthesis of Audio Files](#synthesis-of-audio-files)
+    - [Building Voices](#building-voices)
+      - [Manual build](#manual-build)
+    - [Generating Voices](#generating-voices)
+    
+- [Demonstration](#demonstration)
+- [Trained Models](#trained-models)
+- [References](#references)
+- [Contact](#contact)
+
 
 <p align="left">
-  • <a href="#training">Training</a> <br>
-  • <a href="#demo">Demonstration</a> <br>
+  • <a href="#training-your-own-hmm-models">Training your own HMM models</a> <br>
+  • <a href="#demonstration">Demonstration</a> <br>
+  • <a href="#trained-models">Trained Models</a> <br>
   • <a href="#references">References</a> <br>
+  • <a href="#contact">Contact</a> <br>
 </p>
 
 
-# Training
+# Training your own HMM models
 Festvox project is part of the work at [Carnegie Mellon University's speech group](http://www.speech.cs.cmu.edu) aimed at advancing the state of Speech Synthesis.
 
 We will be using Festvox to train our HMM models and build voices.
@@ -59,7 +81,7 @@ For training you need to make a file named **txt.done.data** with the base filen
 > There is a space after/before the round braces and between the file name and the utterance. 
 > The utterance must be in double quotes.
 
-## Train HMM
+## Training
 ### Preparing the Directory
 The first step to train HMM is to prepare the directory.
 After running the docker image,
@@ -96,7 +118,7 @@ For building voices, you can use an automated script that will do the feature ex
 ./bin/build_cg_rfs_voice
 ```
 
-#### For manual build
+#### Manual build
 Firsty build the prompts and label the data.
 ```sh
 ./bin/do_build build_prompts etc/txt.done.data
@@ -138,9 +160,16 @@ Then audio can be easily generated for any utterance by
 ./flite_cmu_us_${NAME} "<sentence to utter>" output.wav
 ```
 
+# Demonstration
+
+# Trained Models
+
 # References
 [Festvox](http://festvox.org) : Festvox project developed by Carnegie Mellon University.\
 [Docker](https://hub.docker.com/r/mjansche/tts-tutorial-sltu2016/) : Festvox configured docker image.\
 [Building Data](http://www.cs.columbia.edu/~ecooper/tts/utt_eng.html) : The format for utterance file.\
 [Training](http://festvox.org/bsv/x3528.html) : Steps to train the HMM Model.\
 [Automated Script](http://festvox.org/cmu_indic/unpacked_all/cmu_indic_slp_mr/bin/build_cg_voice) : Description of the automated script.
+
+# Contact
+
