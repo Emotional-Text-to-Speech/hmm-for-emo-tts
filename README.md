@@ -18,22 +18,11 @@
     - [Synthesis of Audio Files](#synthesis-of-audio-files)
     - [Building Voices](#building-voices)
       - [Manual build](#manual-build)
-    - [Generating Voices](#generating-voices)
-    
+    - [Generating Voices](#generating-voices)   
 - [Demonstration](#demonstration)
 - [Trained Models](#trained-models)
 - [References](#references)
 - [Contact](#contact)
-
-
-<p align="left">
-  • <a href="#training-your-own-hmm-models">Training your own HMM models</a> <br>
-  • <a href="#demonstration">Demonstration</a> <br>
-  • <a href="#trained-models">Trained Models</a> <br>
-  • <a href="#references">References</a> <br>
-  • <a href="#contact">Contact</a> <br>
-</p>
-
 
 # Training your own HMM models
 Festvox project is part of the work at [Carnegie Mellon University's speech group](http://www.speech.cs.cmu.edu) aimed at advancing the state of Speech Synthesis.
