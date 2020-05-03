@@ -20,3 +20,39 @@ The server can be run using
 node server.js
 ```
 The above command will run the server on localhost at port 5050.
+
+## Setup for Windows
+
+You can install supported versions of Linux alongside Windows without setting up a virtual machine by installing Windows Subsystem for Linux on your computer.
+Follow the below mentioned steps or https://www.windowscentral.com/install-windows-subsystem-linux-windows-10 for installation. 
+```
+Open Settings and click on Apps.
+Click Program and Features option under related settings.
+Click on 'Turn Windows features on or off' option.
+Click on 'Windows Subsystem for Linux' and press restart after clicking ok.
+Open Microsoft Store and launch Ubuntu.
+Create your username and password.
+```
+
+After completing the above steps type bash in your command prompt and install Node.js and GCC, a standard compilor for Linux. 
+```sh
+sudo apt-get update
+sudo apt install gcc
+Install node js
+```
+To setup runtime tts engine `flite` and running the wrapper , type the following commands 
+
+```sh
+cd hmm_wrapper
+git clone https://github.com/festvox/flite.git
+cd flite
+./configure
+make
+node server.js
+```
+Open index.html to add emotion and message. If the output file is not generated in hmm_wrapper directory, type the following command on your command prompt.
+```sh
+./flite/bin/flite -voice voices/amused.flitevox --setf duration_stretch=1.00 -t  "Ah, I had forgotten, he exclaimed." amused_7.wav
+```
+Type the emotion of your interest at the place of amused in the above command. Those emotions whose .flitevox files are present in the
+voices directory can only be used. Write your message in place of the sentence present in double quotes. Replace amused7.wav with your_file_name.wav
