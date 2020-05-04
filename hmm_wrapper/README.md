@@ -55,4 +55,11 @@ Open index.html to add emotion and message. If the output file is not generated 
 ./flite/bin/flite -voice voices/amused.flitevox --setf duration_stretch=1.00 -t  "Ah, I had forgotten, he exclaimed." amused_7.wav
 ```
 Type the emotion of your interest at the place of amused in the above command. Those emotions whose .flitevox files are present in the
-voices directory can only be used. Write your message in place of the sentence present in double quotes. Replace amused7.wav with your_file_name.wav
+voices directory can only be used. Write your message in place of the sentence present in double quotes. Replace `amused7.wav` with `your_file_name.wav`
+
+## Some examples
+
+- We tried out a few sentences that we felt were giving a really good result. To start out you can try those too! There are available here: [\[doc\]](https://docs.google.com/document/d/1TEUK0rZovpz9TAgXgwlqSc8VskVsGPafBC-DbSrBxyg/edit?usp=sharing)
+- The emotions in the brackets after the utterance indicate the emotions where the maximum contrast in the generated speech samples can be perceived.
+
+
