@@ -1,4 +1,5 @@
 # HMM-based Emotional Text-to-speech
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3876162.svg)](https://doi.org/10.5281/zenodo.3876162)
 
 A repository with comprehensive instructions for using the Festvox toolkit for generating emotional speech from text. This was done as a part of a course project for Speech Recognition and Understanding (ECE557/CSE5SRU) at IIIT Delhi during Winter 2020.
 
