@@ -27,6 +27,7 @@ A repository with comprehensive instructions for using the Festvox toolkit for g
 - [Demonstration](#demonstration)
 - [Trained Models](#trained-models)
 - [References](#references)
+- [Cite](#cite)
 - [Contact](#contact)
 
 # Dataset
@@ -207,6 +208,29 @@ These models can be used for further fine-tuning or running the system provided 
 [Building Data](http://www.cs.columbia.edu/~ecooper/tts/utt_eng.html) : The format for utterance file.\
 [Training](http://festvox.org/bsv/x3528.html) : Steps to train the HMM Model.\
 [Automated Script](http://festvox.org/cmu_indic/unpacked_all/cmu_indic_slp_mr/bin/build_cg_voice) : Description of the automated script.
+
+# Cite
+
+If you find any of the approches or code in this repository useful, please consider citing this repository:
+```
+@software{pranav_jain_2020_3876162,
+  author       = {Pranav Jain and
+                  Srija Anand and
+                  Eshita and
+                  Shruti Singh and
+                  Aditya Chetan and
+                  Brihi Joshi and
+                  Pulkit Madaan},
+  title        = {{Emotional-Text-to-Speech/hmm-for-emo-tts: Working 
+                   Demo Release}},
+  month        = jun,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.3876162},
+  url          = {https://doi.org/10.5281/zenodo.3876162}
+}
+```
 
 ---
 
