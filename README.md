@@ -221,8 +221,8 @@ If you find any of the approches or code in this repository useful, please consi
                   Aditya Chetan and
                   Brihi Joshi and
                   Pulkit Madaan},
-  title        = {{Emotional-Text-to-Speech/hmm-for-emo-tts: Working 
-                   Demo Release}},
+  title        = {{An exploration into HMM-based methods for 
+                   Emotional Text-to-Speech}},
   month        = jun,
   year         = 2020,
   publisher    = {Zenodo},
