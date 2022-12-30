@@ -198,7 +198,7 @@ We also make our system demonstration publicaly available within the ```hmm_wrap
 
 # Trained Models
 
-We also make the trained models for the different emotions available [here](https://drive.google.com/drive/folders/1Cgwis8BtXZuLXHD91XwfMLCF2GIB2A0J?usp=sharing). 
+We also make the trained models for the different emotions available [here](https://drive.google.com/drive/folders/13FGOHiEOx3Mb96Piz04TO4hkO3fDQ0GK?usp=sharing). 
 
 These models can be used for further fine-tuning or running the system provided in ```hmm_wrapper``` directory.
 
